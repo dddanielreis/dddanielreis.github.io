@@ -1,196 +1,137 @@
-# Blog Pessoal
+# Static Blog Framework Comparison
 
-Blog minimalista construído com [Hugo](https://gohugo.io/) e hospedado no GitHub Pages.
+Multiple minimalist blog implementations showcasing different modern frameworks - all with dark mode, gray accents, and Brazilian Portuguese interface.
 
-## 🎨 Características
+## 📚 Available Frameworks
 
-- ✨ Design minimalista com modo escuro
-- 🎨 Tema com acentos em cinza
-- 🇧🇷 Interface em Português (Brasil)
-- 🚀 Deploy automático via GitHub Actions
-- 📱 Responsivo
-- ⚡ Extremamente rápido
+This repository contains **three complete blog implementations** using different static site generators:
 
-## 📝 Como Adicionar um Novo Post
+### 1. **Hugo** - Fastest Build Times
+- 📂 Location: `frameworks/hugo-blog/`
+- ⚡ Build time: <1ms per page
+- 🎯 Best for: Content-heavy sites, non-developers
+- 🔧 Language: Go (no setup needed)
 
-### Método 1: Usando Hugo CLI (recomendado)
+### 2. **Astro** - Best Performance ⭐ RECOMMENDED
+- 📂 Location: `frameworks/astro-blog/`
+- ⚡ Ships zero JavaScript by default (40x less than Gatsby)
+- 🎯 Best for: Modern static blogs with optional React components
+- 🔧 Language: JavaScript/TypeScript + React support
 
-Se você tem Hugo instalado localmente:
+### 3. **Next.js** - Full React Framework
+- 📂 Location: `frameworks/nextjs-blog/`
+- ⚡ Static export + full React ecosystem
+- 🎯 Best for: React developers, complex interactions
+- 🔧 Language: TypeScript/React
 
-```bash
-# Criar um novo post
-hugo new content/posts/meu-primeiro-post.md
+## 🎨 Common Features
 
-# O arquivo será criado em content/posts/meu-primeiro-post.md
-```
+All implementations include:
+- ✨ Minimalist dark mode design
+- 🎨 Gray accent colors (#6b7280)
+- 🇧🇷 Brazilian Portuguese interface
+- 📱 Fully responsive
+- 🚀 GitHub Actions deployment workflows
+- 📝 Markdown-based content (Hugo, Astro) or data-based (Next.js)
 
-### Método 2: Manualmente
+## 🚀 Quick Start
 
-1. Crie um novo arquivo em `content/posts/` com a extensão `.md`
-2. Adicione o front matter no topo do arquivo:
+Choose your framework and follow its README:
 
-```markdown
----
-title: "Título do Seu Post"
-date: 2026-01-04
-draft: false
-tags: ["tag1", "tag2"]
-categories: ["categoria"]
----
+| Framework | Setup | Dev Server | Build |
+|-----------|-------|------------|-------|
+| **Hugo** | Install Hugo CLI | `hugo server -D` | `hugo` |
+| **Astro** | `npm install` | `npm run dev` | `npm run build` |
+| **Next.js** | `npm install` | `npm run dev` | `npm run build` |
 
-Escreva seu conteúdo aqui usando Markdown.
-```
+### Detailed Instructions
 
-### Dicas para Posts
+Each framework has its own detailed README:
+- [Hugo Documentation](./frameworks/hugo-blog/README.md) (Portuguese)
+- [Astro Documentation](./frameworks/astro-blog/README.md) (English)
+- [Next.js Documentation](./frameworks/nextjs-blog/README.md) (English)
 
-- **Draft**: Use `draft: true` para posts em rascunho (não serão publicados)
-- **Tags**: Adicione tags relevantes para organização
-- **Categorias**: Use categorias para agrupar posts relacionados
-- **Data**: A data determina a ordem dos posts
+## 📊 Framework Comparison
 
-## 🚀 Como Publicar
+| Feature | Hugo | Astro ⭐ | Next.js |
+|---------|------|---------|---------|
+| **JavaScript Size** | 0 KB | 5 KB | 87+ KB |
+| **Build Speed** | ⚡⚡⚡ Fastest | ⚡⚡ Fast | ⚡ Good |
+| **React Support** | ❌ No | ✅ Optional | ✅ Full |
+| **Learning Curve** | Easy | Easy | Medium |
+| **Setup Complexity** | Low | Medium | Medium |
+| **Lighthouse Score** | 100 | 98-100 | 90-95 |
+| **Best For** | Simple blogs | Modern blogs | React apps |
 
-O blog é publicado automaticamente no GitHub Pages quando você faz push para o branch `main`:
+## 🎯 Which Framework Should You Choose?
 
-```bash
-# 1. Adicione seus arquivos
-git add .
+### Choose **Hugo** if:
+- You want the fastest builds
+- You prefer simple configuration
+- You don't need JavaScript interactivity
+- You want the easiest setup
 
-# 2. Faça commit das mudanças
-git commit -m "Adicionar novo post"
+### Choose **Astro** ⭐ if:
+- You want best performance
+- You might need React components later
+- You value modern development experience
+- You want zero JavaScript by default
 
-# 3. Faça push para o branch main
-git push origin main
-```
+### Choose **Next.js** if:
+- You're a React developer
+- You need complex client-side interactions
+- You want full React ecosystem access
+- You plan to add dynamic features later
 
-O GitHub Actions irá:
-1. Construir o site com Hugo
-2. Publicar automaticamente em https://dddanielreis.github.io/
+## 🚀 Deployment
 
-⏱️ O processo leva cerca de 1-2 minutos.
+All three frameworks include GitHub Actions workflows:
 
-## 🛠️ Desenvolvimento Local
+1. Copy the appropriate `*-deploy.yml` file to `.github/workflows/`
+2. Enable GitHub Pages in repository settings (Source: GitHub Actions)
+3. Push to `main` branch
 
-Para visualizar o site localmente antes de publicar:
+The site deploys automatically on every push.
 
-### 1. Instalar Hugo
-
-**macOS:**
-```bash
-brew install hugo
-```
-
-**Linux:**
-```bash
-sudo snap install hugo
-```
-
-**Windows:**
-```bash
-choco install hugo-extended
-```
-
-Ou baixe em: https://github.com/gohugoio/hugo/releases
-
-### 2. Clonar o Repositório
-
-```bash
-git clone https://github.com/dddanielreis/dddanielreis.github.io.git
-cd dddanielreis.github.io
-git submodule update --init --recursive
-```
-
-### 3. Executar o Servidor Local
-
-```bash
-# Iniciar o servidor de desenvolvimento
-hugo server -D
-
-# O site estará disponível em http://localhost:1313/
-# -D inclui posts em draft
-```
-
-O servidor possui hot-reload, então mudanças nos arquivos são refletidas automaticamente.
-
-## 📁 Estrutura de Diretórios
+## 📁 Repository Structure
 
 ```
-.
-├── .github/
-│   └── workflows/
-│       └── hugo.yml          # Workflow de deploy
-├── archetypes/
-│   └── posts.md              # Template para novos posts
-├── content/
-│   ├── posts/                # Seus posts ficam aqui
-│   │   └── _index.md
-│   └── sobre.md              # Página "Sobre"
-├── themes/
-│   └── hugo-blog-awesome/    # Tema do blog
-├── hugo.toml                 # Configuração do Hugo
-└── README.md                 # Este arquivo
+dddanielreis.github.io/
+├── frameworks/
+│   ├── hugo-blog/          # Hugo implementation
+│   │   ├── hugo.toml
+│   │   ├── content/
+│   │   ├── themes/
+│   │   └── README.md
+│   ├── astro-blog/         # Astro implementation
+│   │   ├── src/
+│   │   ├── package.json
+│   │   └── README.md
+│   └── nextjs-blog/        # Next.js implementation
+│       ├── src/
+│       ├── package.json
+│       └── README.md
+├── .gitignore
+└── README.md               # This file
 ```
 
-## ⚙️ Configuração
+## 📖 Research Sources
 
-A configuração principal está em `hugo.toml`:
+This comparison is based on 2026 industry research:
 
-```toml
-baseURL = 'https://dddanielreis.github.io/'
-languageCode = 'pt-BR'
-title = 'Meu Blog'
-theme = 'hugo-blog-awesome'
+- [Astro vs Next.js vs Remix Comparison (Octahedroid)](https://octahedroid.com/blog/astro-vs-nextjs-vs-remix-react-router-static-site-generators-comparison-2026)
+- [Astro vs Next.js for Blogs in 2026](https://sourabhyadav.com/blog/astro-vs-nextjs-for-blogs-2026/)
+- [Top 5 Static Site Generators in 2026 (Kinsta)](https://kinsta.com/blog/static-site-generator/)
+- [Hugo vs Jekyll Benchmarking 2024](https://michaelnordmeyer.com/benchmarking-hugo-vs-jekyll-vs-github-pages-in-2024)
 
-[params]
-  description = 'Um blog minimalista'
-  defaultTheme = 'dark'
-  accentColor = '#6b7280'  # Cinza
-  author = 'Daniel Reis'
-```
+## 📝 Contributing
 
-### Personalizar:
+Feel free to submit issues or pull requests to improve any of the implementations.
 
-- **Título**: Altere `title` para o nome do seu blog
-- **Descrição**: Modifique `description`
-- **Cor de Destaque**: Ajuste `accentColor` (formato hexadecimal)
-- **Autor**: Atualize o campo `author`
+## 📄 License
 
-## 🌐 Configurar GitHub Pages
-
-1. Vá em **Settings** > **Pages** no repositório
-2. Em **Source**, selecione **GitHub Actions**
-3. Salve as configurações
-
-Após o primeiro push para `main`, o site será publicado automaticamente.
-
-## 🎨 Personalizar Tema
-
-O tema atual é [hugo-blog-awesome](https://github.com/hugo-sid/hugo-blog-awesome).
-
-Para personalizar:
-- Edite `hugo.toml` para mudar cores e configurações
-- Consulte a documentação do tema para opções avançadas
-- Crie layouts customizados em `layouts/` (sobrescreve o tema)
-
-## 🌍 Suporte Multilíngue (Futuro)
-
-O blog está preparado para suporte multilíngue. Para ativar:
-
-1. Descomente a seção de idiomas em `hugo.toml`
-2. Crie conteúdo específico por idioma em `content/en/`, `content/pt-BR/`, etc.
-3. Consulte a [documentação do Hugo](https://gohugo.io/content-management/multilingual/)
-
-## 📖 Recursos Úteis
-
-- [Documentação do Hugo](https://gohugo.io/documentation/)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [Hugo Blog Awesome Theme](https://github.com/hugo-sid/hugo-blog-awesome)
-- [GitHub Pages Docs](https://docs.github.com/en/pages)
-
-## 📄 Licença
-
-Este projeto usa o tema hugo-blog-awesome, que é licenciado sob MIT License.
+MIT
 
 ---
 
-Feito com ❤️ usando Hugo
+Built with ❤️ to compare modern static site generators

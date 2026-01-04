@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Meu Blog', description = 'Um blog minimalista' } = Astro.props;
+const fullTitle = title === 'Meu Blog' ? title : `${title} | Meu Blog`;
+---
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" style="font-size: 1.25rem; font-weight: 600;">Meu Blog</a>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Meu Blog. Feito com Astro.</p>
+    </footer>
+  </body>
+</html>
