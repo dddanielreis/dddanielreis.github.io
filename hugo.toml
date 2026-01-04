@@ -1,7 +1,10 @@
 baseURL = 'https://dddanielreis.github.io/'
-languageCode = 'pt-BR'
+languageCode = 'pt-br'
 title = 'Meu Blog'
 theme = 'hugo-blog-awesome'
+
+# Define o idioma padrão do conteúdo
+defaultContentLanguage = 'pt-br'
 
 # Habilita emojis no conteúdo
 enableEmoji = true
@@ -9,57 +12,97 @@ enableEmoji = true
 # Configuração de paginação
 paginate = 5
 
-[params]
-  # Descrição do site
-  description = 'Um blog minimalista'
-
-  # Modo escuro como padrão
-  defaultTheme = 'dark'
-
-  # Cor de destaque (cinza)
-  accentColor = '#6b7280'
-
-  # Autor
-  author = 'Daniel Reis'
-
-  # Links de redes sociais (opcional - remova se não quiser)
-  # [[params.socialIcons]]
-  # name = "github"
-  # url = "https://github.com/dddanielreis"
-
-  # [[params.socialIcons]]
-  # name = "twitter"
-  # url = "https://twitter.com/seuusuario"
-
-[menu]
-  [[menu.main]]
-    identifier = "sobre"
-    name = "Sobre"
-    url = "/sobre/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 20
-
 # Configurações de markup
 [markup]
   [markup.highlight]
-    style = 'monokai'
-    lineNos = true
-    lineNumbersInTable = true
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+
+############################## Português (Brasil) ################################
+[Languages.pt-br]
+  languageName = "Português (Brasil)"
+  languageCode = "pt-br"
+  contentDir = "content"
+  weight = 1
+
+  [Languages.pt-br.menu]
+  [[Languages.pt-br.menu.main]]
+    pageRef = "/"
+    name = 'Início'
+    url = '/'
+    weight = 10
+  [[Languages.pt-br.menu.main]]
+    pageRef = "posts"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[Languages.pt-br.menu.main]]
+    pageRef = "sobre"
+    name = 'Sobre'
+    url = '/sobre/'
+    weight = 30
+
+[Languages.pt-br.params]
+  sitename = "Meu Blog"
+  defaultColor = "dark"
+  description = "Um blog minimalista"
+  mainSections = ['posts']
+  toc = false
+  tocOpen = false
+  goToTop = true
+  dateFormat = "2 January 2006"
+  rssFeedDescription = "summary"
+
+[Languages.pt-br.params.author]
+  intro = "Meu Blog"
+  name = "Daniel Reis"
+  description = "Um blog minimalista com modo escuro"
+
+[Languages.pt-br.params.webmanifest]
+  name = "Meu Blog"
+  short_name = "Blog"
+  start_url = "/"
+  theme_color = "#6b7280"
+  background_color = "#131418"
+  display = "standalone"
+
+# Links de redes sociais (opcional - descomente para usar)
+# [[params.socialIcons]]
+# name = "github"
+# url = "https://github.com/dddanielreis"
 
 # Suporte multilíngue (stub para futuro)
-[languages]
-  [languages.pt-BR]
-    languageName = "Português (Brasil)"
-    weight = 1
-
-  # [languages.en]
-  #   languageName = "English"
-  #   weight = 2
-  #   title = "My Blog"
-  #   [languages.en.params]
-  #     description = "A minimalist blog"
+# [Languages.en]
+#   languageName = "English"
+#   languageCode = "en"
+#   contentDir = "content/en"
+#   weight = 2
+#
+#   [Languages.en.menu]
+#   [[Languages.en.menu.main]]
+#     pageRef = "/"
+#     name = 'Home'
+#     url = '/'
+#     weight = 10
+#   [[Languages.en.menu.main]]
+#     pageRef = "posts"
+#     name = 'Posts'
+#     url = '/posts/'
+#     weight = 20
+#   [[Languages.en.menu.main]]
+#     pageRef = "about"
+#     name = 'About'
+#     url = '/about/'
+#     weight = 30
+#
+#   [Languages.en.params]
+#     sitename = "My Blog"
+#     defaultColor = "dark"
+#     description = "A minimalist blog"
+#     mainSections = ['posts']
+#
+#   [Languages.en.params.author]
+#     intro = "My Blog"
+#     name = "Daniel Reis"
+#     description = "A minimalist blog with dark mode"
