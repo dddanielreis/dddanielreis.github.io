@@ -85,18 +85,38 @@ Each framework has its own detailed README:
 
 ## 🚀 Deployment
 
-All three frameworks include GitHub Actions workflows:
+All three frameworks include GitHub Actions workflows in `.github/workflows/`:
 
-1. Copy the appropriate `*-deploy.yml` file to `.github/workflows/`
-2. Enable GitHub Pages in repository settings (Source: GitHub Actions)
-3. Push to `main` branch
+- `hugo-deploy.yml` - Deploy Hugo Blog
+- `astro-deploy.yml` - Deploy Astro Blog
+- `nextjs-deploy.yml` - Deploy Next.js Blog
 
-The site deploys automatically on every push.
+### Deployment Options
+
+**Option 1: Manual Deployment (GitHub UI)**
+1. Go to Actions tab in your repository
+2. Select the workflow you want to run (Hugo, Astro, or Next.js)
+3. Click "Run workflow" button
+4. Choose the branch and click "Run workflow"
+
+**Option 2: Automatic Deployment**
+- Workflows automatically trigger when you push changes to `main` branch
+- Each workflow only runs when files in its framework directory change
+
+### Setup
+1. Enable GitHub Pages in repository settings (Source: GitHub Actions)
+2. Choose your preferred framework
+3. Either run manually from Actions tab or push to main branch
 
 ## 📁 Repository Structure
 
 ```
 dddanielreis.github.io/
+├── .github/
+│   └── workflows/          # GitHub Actions workflows
+│       ├── hugo-deploy.yml
+│       ├── astro-deploy.yml
+│       └── nextjs-deploy.yml
 ├── frameworks/
 │   ├── hugo-blog/          # Hugo implementation
 │   │   ├── hugo.toml
