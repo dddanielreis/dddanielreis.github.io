@@ -1,0 +1,65 @@
+baseURL = 'https://dddanielreis.github.io/'
+languageCode = 'pt-BR'
+title = 'Meu Blog'
+theme = 'hugo-blog-awesome'
+
+# Habilita emojis no conteúdo
+enableEmoji = true
+
+# Configuração de paginação
+paginate = 5
+
+[params]
+  # Descrição do site
+  description = 'Um blog minimalista'
+
+  # Modo escuro como padrão
+  defaultTheme = 'dark'
+
+  # Cor de destaque (cinza)
+  accentColor = '#6b7280'
+
+  # Autor
+  author = 'Daniel Reis'
+
+  # Links de redes sociais (opcional - remova se não quiser)
+  # [[params.socialIcons]]
+  # name = "github"
+  # url = "https://github.com/dddanielreis"
+
+  # [[params.socialIcons]]
+  # name = "twitter"
+  # url = "https://twitter.com/seuusuario"
+
+[menu]
+  [[menu.main]]
+    identifier = "sobre"
+    name = "Sobre"
+    url = "/sobre/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 20
+
+# Configurações de markup
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+    lineNos = true
+    lineNumbersInTable = true
+
+# Suporte multilíngue (stub para futuro)
+[languages]
+  [languages.pt-BR]
+    languageName = "Português (Brasil)"
+    weight = 1
+
+  # [languages.en]
+  #   languageName = "English"
+  #   weight = 2
+  #   title = "My Blog"
+  #   [languages.en.params]
+  #     description = "A minimalist blog"
